@@ -1,0 +1,91 @@
+<!--
+  Generated template for the RegisterPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Register</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content has-bouncing="true">
+
+  <ion-scroll  scrollX="true" scrollY="true" style="width: 100%; height: 100%">
+    <div style="padding:10%;overflow-y: scroll;position: absolute;">
+  
+      <!-- <ion-row>
+          <ion-col>
+            <div style="margin-top:20px;width:100%;height:100%;align-items:center;">
+              <ion-col>
+                <img src="assets/imgs/online-shop.png" />
+              </ion-col>
+            </div>
+          </ion-col>
+      </ion-row> -->
+  
+      <ion-row >
+          <ion-col>
+            <ion-list>
+     
+              <ion-label style="float:left; margin-left: 10px;"> First Name</ion-label>
+              <ion-item>
+                  <ion-input type="text" [(ngModel)]='user.firstname'></ion-input>
+              </ion-item>
+
+              <div>
+                <ion-label style="float:left; margin-left: 10px;"> Last Name</ion-label>
+              <ion-item>
+                  <ion-input type="text" [(ngModel)]='user.lastname'></ion-input>
+              </ion-item>
+              </div>
+
+              <div>
+                <ion-label style="float:left; margin-left: 10px;"> Email</ion-label>
+              <ion-item>
+                  <!-- <ion-label> Email </ion-label> -->
+                <ion-input type="email" [(ngModel)]='user.email'></ion-input>
+              </ion-item>
+            </div>
+
+            <div>
+              <ion-label style="float:left; margin-left: 10px;"> Mobile No.</ion-label>
+              <ion-item>
+                  <!-- <ion-label> Mobile No. </ion-label> -->
+                <ion-input type="number" [(ngModel)]='user.mobile'></ion-input>
+              </ion-item>
+            </div>
+
+            <div>
+              <ion-label style="float:left; margin-left: 10px;"> Password</ion-label>
+              <ion-item margin-top="10px">
+                <!-- <ion-label>Password</ion-label> -->
+                <ion-input type="password" [(ngModel)]='user.password'></ion-input>
+              </ion-item>
+            </div>
+
+            <ion-label style="float:left; margin-left: 10px;"> Confirm Password</ion-label>
+            <div>
+              <ion-item margin-top="10px">
+                <!-- <ion-label>Confirm Password</ion-label> -->
+                <ion-input type="password"></ion-input>
+              </ion-item>
+            </div>
+
+     
+            </ion-list>
+          </ion-col>
+        </ion-row>
+     
+        <ion-row>
+          <ion-col>
+            <button style="margin-top:5px;height:45px;" ion-button class="login-button"  (click)="register(user)">Register</button>
+          </ion-col>
+        </ion-row>
+  
+    </div>
+  </ion-scroll>
+</ion-content>

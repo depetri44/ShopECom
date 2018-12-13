@@ -1,0 +1,36 @@
+page-dashboard {
+    ion-card {
+        position: relative;
+        text-align: center;
+        color: rgba(255,255,255,.5);
+      }
+    
+      .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        flex-wrap: inherit;
+        color: #ffffff;
+      }
+    
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #ffffff;
+      }
+      .img{
+        z-index: 10;
+        display: block;
+        position: absolute;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        background: rgba(0, 0, 0, 0.5);
+      }
+    
+}

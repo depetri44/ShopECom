@@ -1,0 +1,63 @@
+<!--
+  Generated template for the WishlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar color='primary'>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-buttons start>
+        <button ion-button icon-only  (click)="addProductPage()">
+            <ion-icon name="add-circle"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="goSearchPage()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Wish List</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+    <ion-card *ngFor="let wishitem of wishList">
+        <ion-item>
+          <ion-avatar item-start  style="background: gray">
+            <img src="{{wishitem.featured_img}}" (click)="imageTapped(card)">
+          </ion-avatar>
+          <h2>{{wishitem.product_name}}</h2>
+          <p>{{wishitem.product_title}}</p>
+        </ion-item>
+        
+        <ion-row>
+        <!-- <ion-col>
+            <button ion-button color="primary" clear small icon-left (click)="addCart(wishitem)">
+            <ion-icon name='thumbs-up'></ion-icon>
+            Add Cart
+          </button>
+          </ion-col> -->
+
+          <ion-col>
+            <button ion-button color="primary" clear small icon-left (click)="removeList(wishitem)">
+            <ion-icon name='text'></ion-icon>
+           Remove WishList
+         </button>
+          </ion-col>
+            <!--<ion-col center text-center>
+            <ion-note>
+              {{card.timestamp}}
+            </ion-note>
+          </ion-col> -->
+        </ion-row>
+      </ion-card>
+
+</ion-content>

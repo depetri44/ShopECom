@@ -1,0 +1,17 @@
+page-product-details {
+    .productimage{
+        height: 35%;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        z-index: 100;
+        background-position: center;
+        background-repeat: no-repeat;
+    }   
+    ion-scroll[scrollX] {
+        white-space: nowrap;
+        .scroll-item {
+        display: inline-block;
+        }
+    }
+}

@@ -1,0 +1,45 @@
+<!--
+  Generated template for the SearchproductPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>searchproduct</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content>
+    
+  <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+  <button ion-button type="button" (click)="searchProducts()">Search</button>
+  <div  class="cards-bg">
+    <ion-list>
+            <ion-item *ngFor="let prd of productList">
+              <ion-card>
+                <div  (click)='onItemClicked(prd.product_id)'>
+                  <img src="{{prd.featured_img}}"/>
+                  
+                  <p class="price_div">
+                    Rs. {{prd.price}}
+                  </p>
+                  <ion-card-content>
+                      <p class="title_div">
+                                {{prd.product_title}}
+                      </p>
+                  </ion-card-content>
+                  
+                </div>
+                <div>
+                    <button ion-button (click)="addToCartClicked(prd)" color="secondary" round outline><ion-icon ios="ios-cart" md="md-cart"></ion-icon>Add Cart</button>
+                    <button ion-button (click)="addToWishListClicked(prd)" color="danger" round outline><ion-icon ios="ios-heart" md="md-heart"></ion-icon>Add WishList</button>
+              </div>
+              </ion-card>     
+          </ion-item>
+      </ion-list> 
+    </div>
+</ion-content>

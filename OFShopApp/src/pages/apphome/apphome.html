@@ -1,0 +1,101 @@
+<!--
+  Generated template for the ApphomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <!-- <ion-navbar no-border-bottom  color='primary'>
+     
+    
+  </ion-navbar> -->
+  <ion-toolbar color='primary'>
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+        </button>
+    <ion-buttons start>
+      <!-- <button ion-button icon-only  (click)="addProductPage()">
+          <ion-icon name="add-circle"></ion-icon>
+          <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </button> -->
+      <button ion-button icon-only  (click)="viewCartPage()">
+          <!-- <ion-badge *ngIf="n" color="accent">{{ cartCountVal }}</ion-badge> -->
+          <ion-badge id="notifications-badge" color="danger">{{ cartCountVal }}</ion-badge>
+          <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+      </button>
+      <button ion-button icon-only (click)="goSearchPage()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button icon-only>
+        <ion-icon name="more"></ion-icon>
+      </button>
+    </ion-buttons>
+    <ion-title>Home</ion-title>
+  </ion-toolbar>
+  <!-- <ion-toolbar color='primary'>
+    <ion-card style="height: 50px;" (click)="goSearchPage()">
+      <ion-card-header style="float:left;color:#ccc;">
+          <ion-icon name="search" style="padding-left: 10px;padding-right: 10px;"></ion-icon>
+          Search Items
+      </ion-card-header>
+    </ion-card> 
+  </ion-toolbar> -->
+
+</ion-header>
+
+
+<ion-content>
+    <ion-slides pager="true" style="width:100%;height:30%;"  autoplay="2000" loop="true" speed="500">
+        <ion-slide>
+          <ion-row>
+            <ion-col>
+                <img style="width:100%;height:100%;" class="slider_img" src="assets/imgs/slid1.jpg" />
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <ion-slide>
+          <ion-row>
+            <ion-col>
+                <img style="width:100%;height:100%;"  class="slider_img" src="assets/imgs/slid2.jpg" />
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+        <!-- <ion-slide>
+          <ion-row>
+            <ion-col>
+                <img class="slider_img" src="assets/imgs/slid3.jpg" />
+            </ion-col>
+          </ion-row>
+        </ion-slide> -->
+        <ion-slide>
+          <ion-row>
+            <ion-col>
+                <img style="width:100%;height:100%;"  class="slider_img" src="assets/imgs/slid4.jpg" />
+            </ion-col>
+          </ion-row>
+        </ion-slide>
+      </ion-slides>
+    
+      <div class=“item-borderless”>
+          <ion-item *ngFor="let cat of categoryList">
+              <div class="card-background-page">
+              <ion-card (click) = "onCategoryClicked(cat.product_category_id)">
+
+                  <img src="{{cat.product_category_imgUrl}}">
+        
+                <div  style="background: rgba(0, 0, 0, 0.8);width:100%;height:100%;">
+                  </div>
+                <div class="card-title" style="color:lightgreen;text-shadow: 5px 0 0 lightgray;">{{cat.product_category_title}}</div>
+        
+        
+                <div class="card-subtitle" style="color:yellow;padding-left:30px;font-weight:bold;">{{cat.product_category_subtitle}}</div>
+            </ion-card>
+            </div>
+          </ion-item>
+    
+        
+      </div>
+</ion-content>

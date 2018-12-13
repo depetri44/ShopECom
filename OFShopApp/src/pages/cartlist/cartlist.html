@@ -1,0 +1,115 @@
+<!--
+  Generated template for the CartlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+    <ion-toolbar color='primary'>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+          </button>
+      <ion-buttons start>
+        <button ion-button icon-only  (click)="addProductPage()">
+            <ion-icon name="add-circle"></ion-icon>
+        </button>
+        <button ion-button icon-only (click)="goSearchPage()">
+          <ion-icon name="search"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-buttons end>
+        <button ion-button icon-only>
+          <ion-icon name="more"></ion-icon>
+        </button>
+      </ion-buttons>
+      <ion-title>Cart List</ion-title>
+    </ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div  class="ion-content_setup">
+            <ion-card *ngFor="let cartItem of cartList">
+                    <ion-icon ios="ios-close" md="md-close" end></ion-icon>
+                    <ion-item>
+                      <ion-avatar item-start  style="background: gray;">
+                        <img src="{{cartItem.featured_img}}" (click)="imageTapped(card)">
+                      </ion-avatar>
+                      <ion-row no-padding>
+                          <ion-col>
+                              <h2>{{cartItem.product_name}}</h2>
+                          </ion-col>
+                      </ion-row>
+                      <ion-row  no-padding>
+                          <ion-col>
+                              Rs. {{cartItem.price}}
+                          </ion-col>
+                      </ion-row>
+                        
+                      <div id="cart">
+                        <div><p style='margin-right: 10px; margin-top: 10px; margin-bottom: 5px; font-size: 16px;'> Quantity   </p> </div>
+                        <div> <ion-icon ios="ios-add-circle-outline" color="secondary" name='md-add-circle' style="zoom:2.0;" (click)="addCart(cartItem)"></ion-icon> </div>
+                        <div><p style='margin: 10px; font-size: 16px;'> {{ cartItem.cartcount  }} </p> </div>
+                        <div> <ion-icon ios="ios-remove-circle-outline" color="danger" name='md-remove-circle' style="zoom:2.0;" (click)="removeCart(cartItem)"></ion-icon> </div>
+                      </div>
+                    </ion-item>
+                    
+                    
+            </ion-card>
+    <!-- <ion-card *ngFor="let cartItem of cartList">
+        <ion-item>
+          <ion-avatar item-start  style="background: gray;">
+            <img src="{{cartItem.featured_img}}" (click)="imageTapped(card)">
+          </ion-avatar>
+          <ion-row>
+              <ion-col>
+                  <h2>{{cartItem.product_name}}</h2>
+              </ion-col>
+          </ion-row>
+          <ion-row>
+              <ion-col>
+                  <p>Rs. {{cartItem.price}}</p>
+              </ion-col>
+          </ion-row>
+          <ion-row style="float:center">
+              <ion-col  align-self-center text-center> Quantity </ion-col>   
+              <ion-col  align-self-center text-center><ion-icon ios="ios-add-circle-outline" color="secondary" name='md-add-circle' style="zoom:2.0;" (click)="addCart(cartItem)"></ion-icon> </ion-col>
+              
+                    <ion-col width-X="50px"  align-self-center text-center> ({{ cartItem.cartcount  }}) </ion-col>
+                    <ion-col  align-self-center text-center> <ion-icon ios="ios-remove-circle-outline" color="danger" name='md-remove-circle' style="zoom:2.0;" (click)="removeCart(cartItem)"></ion-icon></ion-col>
+                
+             
+            </ion-row>
+        </ion-item>
+        
+        
+      </ion-card> -->
+      </div>
+      <div class="footer">
+          <div class="row">
+                <div class="col">
+                    <!-- <button class="button button-circle button-energized icon ion-log-in"></button> -->
+                    <p class="text-center">Total Amount </p>
+                    <p>Rs. {{ totalAmount }}</p>
+                </div>
+                <div class="col">
+                    <!-- <button class="button button-circle button-positive icon ion-social-facebook"></button> -->
+                </div>
+                <div class="col">
+                    <!-- <button class="button button-circle button-positive icon ion-social-facebook"></button> -->
+                    <button style="margin-top: 20%;" ion-button color="secondary" small icon-left   (click)="checkoutCart(cartItem)">
+                        <ion-icon ios="ios-checkmark" md="md-checkmark"></ion-icon> Checkout
+                    </button>
+                </div>
+        
+            <!-- <p class="text-center"><a href="#/app/forgot-password">Forgot password</a></p> -->
+          </div>
+      </div>
+     
+</ion-content>
+
+
+
+

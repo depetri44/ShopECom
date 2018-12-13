@@ -1,0 +1,254 @@
+<!--
+  Generated template for the ProductDetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ProductDetails</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  
+    <!-- <ion-item *ngFor="let productcart of productcartList"> -->
+    <div>
+          <ion-card class="sliderimage">
+              <img src="{{ productcart.featured_img }}"/>
+              <!-- <img src="https://colorlib.com/preview/theme/cozastore/images/product-11.jpg"/> -->
+              <div class="myOverlay">
+                      <h2><b>{{productcart.product_name}}</b></h2> <br/> <br/>
+                      <h2><b>Price: Rs. {{productcart.item_amount}}</b></h2> <br/> <br/>
+              <ion-row>
+                  <ion-col>
+                      <!-- <button ion-button color="primary" clear small icon-start>
+                          <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+                          {{productcart.cartcount}}
+                      </button> -->
+                      <ion-row style="float:center">
+                        <ion-col  align-self-center text-center> Quantity </ion-col>   
+                        <ion-col  align-self-center text-center>
+                          <ion-icon ios="ios-add-circle-outline" color="secondary" name='md-add-circle' style="zoom:2.0;" (click)="addToCart(productcart)"></ion-icon> </ion-col>
+                          <ion-col width-X="50px" style="color:green"  align-self-center text-center> {{ productcart.cartcount  }} </ion-col>
+                          <ion-col  align-self-center text-center> <ion-icon ios="ios-remove-circle-outline" color="danger" name='md-remove-circle' style="zoom:2.0;" (click)="removeCart(productcart)"></ion-icon></ion-col>
+                      </ion-row>
+                  </ion-col>
+                  <ion-col>
+                  <button ion-button color="primary" clear small align-self-center text-center icon-start (click)="wishListAction(productcart)">
+                      
+                        <div *ngIf="productcart.isWishList == true" > <ion-icon ios="ios-heart" md="md-heart" ></ion-icon>  Remove WishList  </div>
+                        <div *ngIf="productcart.isWishList == false" > <ion-icon ios="ios-heart-outline" md="md-heart-outline" ></ion-icon> Add WishList  </div> 
+                  </button>
+                  </ion-col>
+                  <!-- <ion-col align-self-center text-center>
+                  <ion-note>
+                      //any other need
+                  </ion-note>
+                  </ion-col> -->
+              </ion-row>
+            </div>
+          </ion-card>
+  </div>
+  <div>
+      <div padding>
+          
+        <div>
+        <h2><b>{{productcart.product_title}}</b></h2> <br/> <br/>
+        <h3><b>Product Description</b></h3> <br/> <br/>
+        <p>
+          {{productcart.configuration}}
+        </p>
+      </div>
+      <div>
+        <br/>
+       <H1>Reviews</H1>
+       <br/>
+       <ion-card padding>
+        <b>Arjun Rai</b> <h6>2h ago</h6>
+        <br/>
+        <p>Obviously remarkable offer price to the car lovers. Realy appreciate such a event.</p>
+        <ion-row>
+            <ion-col>
+              <button ion-button color="primary" clear small icon-start>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                  <ion-icon ios="ios-star" md="md-star"></ion-icon>
+              </button>
+              
+            </ion-col>
+            <ion-col>
+                <button ion-button color="primary" clear small icon-start>
+                    5 stars
+                  </button>
+            </ion-col>
+            <ion-col>
+              <button ion-button color="primary" clear small icon-start>
+                <ion-icon name='text'></ion-icon>
+                4 Replies
+              </button>
+            </ion-col>
+            
+        </ion-row>
+      </ion-card>
+  
+  
+      <br/>
+      <ion-card padding>
+       <b>Arjun Rai</b> <h6>2h ago</h6>
+       <br/>
+       <p>Obviously remarkable offer price to the car lovers. Realy appreciate such a event.</p>
+       <ion-row>
+           <ion-col>
+             <button ion-button color="primary" clear small icon-start>
+               <ion-icon ios="ios-star" md="md-star"></ion-icon>
+               <ion-icon ios="ios-star" md="md-star"></ion-icon>
+               <ion-icon ios="ios-star" md="md-star"></ion-icon>
+               <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
+               <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
+             </button>
+            </ion-col>
+          <ion-col>
+              <button ion-button color="primary" clear small icon-start>
+                3 stars
+              </button>
+           </ion-col>
+           <ion-col>
+             <button ion-button color="primary" clear small icon-start>
+               <ion-icon name='text'></ion-icon>
+               4 Replies
+             </button>
+           </ion-col>
+           
+       </ion-row>
+     </ion-card>
+  
+  
+     <br/>
+     <ion-card padding>
+      <b>Arjun Rai</b> <h6>2h ago</h6>
+      <br/>
+      <p>Obviously remarkable offer price to the car lovers. Realy appreciate such a event.</p>
+      <ion-row>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star" md="md-star"></ion-icon>
+                <ion-icon ios="ios-star-outline" md="md-star-outline"></ion-icon>
+            </button>
+          </ion-col>
+        <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              4 stars
+            </button>
+          </ion-col>
+          <ion-col>
+            <button ion-button color="primary" clear small icon-start>
+              <ion-icon name='text'></ion-icon>
+              4 Replies
+            </button>
+          </ion-col>
+          
+      </ion-row>
+    </ion-card>  
+      </div>
+
+     
+    </div>
+    <h2><b>Suggestions</b></h2> <br/>
+    <ion-grid>
+      <ion-row align-items-start>
+        <ion-item *ngFor="let prd of productList">
+        <ion-col>
+          <ion-card  (click)='onItemClicked(prd)'> 
+            <div>
+                <img src="{{ prd.featured_img }}" />
+          
+              <p class="price_div">
+                Rs. {{prd.price}}
+              </p>
+              <ion-card-content>
+                  <p class="title_div">
+                            {{prd.product_title}}
+                  </p>
+              </ion-card-content>
+            </div>
+              </ion-card>   
+        </ion-col>
+        </ion-item>
+      </ion-row>
+    </ion-grid>
+        <!--<ion-col>
+          2 of 4
+        </ion-col>
+         <ion-col>
+          3 of 4
+        </ion-col>
+        <ion-col>
+          4 of 4 <br>#<br>#<br>#
+        </ion-col> -->
+    
+      <!-- <ion-row align-items-center>
+        <ion-col>
+          1 of 4
+        </ion-col>
+        <ion-col>
+          2 of 4
+        </ion-col>
+        <ion-col>
+          3 of 4
+        </ion-col>
+        <ion-col>
+          4 of 4 <br>#<br>#<br>#
+        </ion-col>
+      </ion-row>
+    
+      <ion-row align-items-end>
+        <ion-col>
+          1 of 4
+        </ion-col>
+        <ion-col>
+          2 of 4
+        </ion-col>
+        <ion-col>
+          3 of 4
+        </ion-col>
+        <ion-col>
+          4 of 4 <br>#<br>#<br>#
+        </ion-col>
+      </ion-row> -->
+    
+    <!-- <ion-scroll scrollX >
+        <div class="scroll-item">
+          
+          <ion-item>
+            <ion-col col-33 *ngFor="let prd of productList">
+                <ion-card> 
+                  <div>
+                      <img src="{{prd.featured_img}}"  (click)='onItemClicked(prd)'/>
+                
+                    <p class="price_div">
+                      Rs. {{prd.price}}
+                    </p>
+                    <ion-card-content>
+                        <p class="title_div">
+                                  {{prd.product_title}}
+                        </p>
+                    </ion-card-content>
+                  </div>
+                    </ion-card>     
+            </ion-col> 
+          </ion-item>  
+         </div>
+        </ion-scroll> -->
+    
+    </div>
+    
+</ion-content>

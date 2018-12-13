@@ -1,0 +1,98 @@
+page-productlist {
+
+    .item-md.item-block .item-inner {
+         padding-right: 8px;
+        border-bottom: 0px solid #dedede;
+    }
+    .label-md {
+        margin: 0px 8px 0px 0;
+    }
+    page-apphome .label-md {
+        margin: 0px 0px 0px 0;
+    }
+
+    // ion-card .add-to-cart {
+    //     position:inherit;
+    //     bottom: 2%;
+    //     left: 50%;
+    //     right: 50%;
+    //     width: 40%;
+    //     height: 35px;        
+    //     padding: 10px;
+    //     background: #F5F5ED;
+    //     border: 0 none;
+    //     border-radius: 0;
+    //     color: #696763;
+    //     font-family: 'Roboto', sans-serif;
+    //     font-size: 15px;
+    //     margin-bottom: 5px;
+    // }
+    ion-card .add-to-cart {
+        position:fixed;
+        bottom: 2%;
+        left: 5%;
+        width: 40%;
+        height: 35px;
+        float: left;
+        border: 0 none;
+        border-radius: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin: 7px 13px;
+        
+    }
+    ion-card .add-to-wish {
+        position:fixed;
+        bottom: 2%;
+        left: 5%;
+        width: 40%;
+        height: 35px;
+        float: left;
+        border: 0 none;
+        border-radius: 0;
+        font-family: 'Roboto', sans-serif;
+        font-size: 15px;
+        margin: 7px 13px;
+        
+    }
+    ion-card #setWidthCartButton{
+        width:100%;
+        float:left;
+    }
+
+    .card-content-md {
+        padding: 0px 11px;
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+
+    .title_div {
+        word-wrap: break-word;
+        text-align:center;
+        color:green;
+        font-size:18px;
+        font-weight: bold;
+        word-break: break-all;
+        overflow-wrap: normal;
+        overflow-wrap: break-word;
+    }
+
+
+    .subtitle_div {
+        word-wrap: break-word;
+        text-align:center;
+        color:turquoise;
+        opacity: 0.6;
+        font-size:18px;
+        font-weight: bold;
+    }
+    .price_div{
+        text-align:center;
+        color:red;
+        font-size:18px;
+        opacity: 0.6;
+        font-weight: normal; 
+        margin-top: 10px;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,82 @@
+<!--
+  Generated template for the ProductlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>ProductList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content  class="cards-bg">
+    
+    <ion-list>
+        <!-- <ion-item *ngFor="let product of products"> -->
+            <ion-item *ngFor="let prd of productList">
+              <ion-card> 
+                <div>
+                    <!-- <ion-card no-padding (click)='onItemClicked()'>  -->
+                    <img src="{{prd.featured_img}}"  (click)='onItemClicked(prd)'/>
+                    <!-- </ion-card> -->
+              
+                  <p class="price_div">
+                    Rs. {{prd.price}}
+                  </p>
+                  <!-- <ion-card-content>
+                      <p class="subtitle_div">
+                                {{prd.product_name}}
+                      </p>
+                  </ion-card-content> -->
+                  <ion-card-content>
+                      <p class="title_div">
+                                {{prd.product_title}}
+                      </p>
+                  </ion-card-content>
+                  
+                </div>
+                <div>
+                  <!-- <ion-item> -->
+                    <button ion-button (click)="addToCartClicked(prd)" color="secondary" round outline><ion-icon ios="ios-cart" md="md-cart"></ion-icon>Add Cart</button>
+                  <!-- </ion-item>
+                  <ion-item   > -->
+                    <button ion-button (click)="addToWishListClicked(prd)" color="danger" round outline><ion-icon ios="ios-heart" md="md-heart"></ion-icon>Add WishList</button>
+                  <!-- </ion-item> -->
+              </div>
+                
+                <!-- <div id='setWidthCartButton'>
+                    <div class="add-to-cart" (click)='addToCartClicked(prd)'>
+                        <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+                        Add Cart
+                    </div>
+                  
+                    <div class="add-to-cart" (click)='addToWishListClicked(prd)'>
+                      <ion-icon ios="ios-heart" md="md-heart"></ion-icon>
+                      Add WishList
+                    </div>
+                  </div> -->
+
+                <!-- <div class="outer">
+                    <div class="middle">
+                      <div class="inner">
+                          <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+                          Add To Cart
+                      </div>
+
+                      <div class="inner">
+                          <ion-icon ios="ios-cart" md="md-cart"></ion-icon>
+                          Add To Cart
+                      </div>
+                    </div>
+                  </div> -->
+
+                   
+              </ion-card>     
+          </ion-item>
+      </ion-list> 
+
+</ion-content>

@@ -1,0 +1,63 @@
+page-apphome {
+    ion-card {
+        position: relative;
+        text-align: center;
+      }
+    
+      .card-title {
+        position: absolute;
+        top: 36%;
+        font-size: 2.0em;
+        width: 100%;
+        font-weight: bold;
+        color: #000;
+      }
+    
+      .card-subtitle {
+        font-size: 1.0em;
+        position: absolute;
+        top: 52%;
+        width: 100%;
+        color: #000;
+      }
+
+    .item-md.item-block .item-inner {
+        padding-right: 8px;
+        border-bottom: none !important;
+    }
+    
+  .label-md {
+    margin: 0px 8px 0px 0; 
+  }
+  button {
+    ion-badge {
+      position: absolute;
+      top: -0.2rem;
+      right: -0.2rem;
+      opacity: 0.9;
+  
+      & ~ ion-icon {
+        margin-right: 1.2rem;
+      }
+    }
+
+    #notification-button {            
+      position: relative;
+      width: 42px;
+      top:1px;
+      right: 1px;
+      overflow: visible!important;
+    }
+
+
+    #notifications-badge {
+      background-color: red;
+      position: absolute;
+      top: -3px;
+      right: -3px;
+      border-radius: 100%;
+    }
+  }
+     
+    
+}

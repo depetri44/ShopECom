@@ -1,0 +1,94 @@
+<!--
+  Generated template for the UserprofilePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-toolbar color='primary'>
+    <button ion-button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+      </button>
+  <ion-buttons start>
+    <button ion-button icon-only  (click)="addProductPage()">
+        <ion-icon name="add-circle"></ion-icon>
+    </button>
+    <button ion-button icon-only (click)="goSearchPage()">
+      <ion-icon name="search"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-buttons end>
+    <button ion-button icon-only>
+      <ion-icon name="more"></ion-icon>
+    </button>
+  </ion-buttons>
+  <ion-title>User Profile</ion-title>
+</ion-toolbar>
+
+</ion-header>
+
+
+<ion-content>
+
+    <div style="padding:10%;overflow-y: scroll;position: absolute;">
+  
+      <!-- <ion-row>
+          <ion-col>
+            <div style="margin-top:20px;width:100%;height:100%;align-items:center;">
+              <ion-col>
+                <img src="assets/imgs/online-shop.png" />
+              </ion-col>
+            </div>
+          </ion-col>
+      </ion-row> -->
+  
+      <ion-row >
+          <ion-col>
+            <ion-list>
+
+              <div>
+                <ion-item>
+                    <img style="width:100%;height:100%;" src="https://upttik.undiksha.ac.id/wp-content/uploads/2018/06/user-300x243.png" />
+                </ion-item>
+              </div>
+     
+              <ion-item>
+                  <ion-label> First Name</ion-label>
+                  <ion-input type="text" disabled="{{!isDisabled}}" [(ngModel)]='profile.fname'></ion-input>
+              </ion-item>
+
+              <div style="margin-top:10px;">
+              <ion-item>
+                  <ion-label> Last Name</ion-label>
+                  <ion-input type="text" disabled="{{!isDisabled}}" [(ngModel)]='profile.lname'></ion-input>
+              </ion-item>
+              </div>
+
+              
+
+            <div style="margin-top:10px;">
+              <ion-item>
+                  <ion-label> Mobile No. </ion-label>
+                <ion-input type="number" disabled="{{!isDisabled}}" [(ngModel)]='profile.mobileNum'></ion-input>
+              </ion-item>
+            </div>
+
+     
+            </ion-list>
+          </ion-col>
+        </ion-row>
+     
+        <ion-row>
+          <ion-col>
+            <button style="margin-top:10px;height:45px;" ion-button class="login-button"  (click)="updateProfile(profile)">
+              <!-- Register -->
+              <p *ngIf="!isDisabled">Edit Profile</p>
+              <p *ngIf="isDisabled">Update Profile</p>
+            </button>
+          </ion-col>
+        </ion-row>
+  
+    </div>
+  
+  </ion-content>

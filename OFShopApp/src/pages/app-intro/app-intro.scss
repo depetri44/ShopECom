@@ -1,0 +1,17 @@
+page-app-intro {
+    .slider_img{
+        width: 180px;
+        height: 180px;
+    }
+
+    .slider_bottom{
+        display: flex;
+        justify-content: flex-end;
+        flex-wrap: wrap-reverse;
+    }
+
+    .slider_bottom_icon{
+        width: 24px;
+        height: 24px;
+    }
+}
