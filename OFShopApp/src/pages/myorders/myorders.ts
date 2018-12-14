@@ -38,28 +38,29 @@ export class MyordersPage {
               doc.data().orderLists.forEach((orderdoc: any)=>{
                   
                   let orders = {} as OrderList;
-                  
-                  orders.orderStatus = doc.data().orderStatus
-                  orders.orderdatetime = doc.data().orderdatetime
-                  orders.orderId = doc.data().orderId
-                  orders.orderLatitude = doc.data().latitude
-                  orders.orderLatitude = doc.data().latitude
-                  orders.offercode = doc.data().offercode
+                  if(orderdoc.userId == this.userId){
+                    orders.orderStatus = doc.data().orderStatus
+                    orders.orderdatetime = doc.data().orderdatetime
+                    orders.orderId = doc.data().orderId
+                    orders.orderLatitude = doc.data().latitude
+                    orders.orderLatitude = doc.data().latitude
+                    orders.offercode = doc.data().offercode
 
-                  orders.categoryid = orderdoc.categoryid;
-                  orders.productid = orderdoc.productid;
-                  orders.cartcount = orderdoc.cartcount;
-                  orders.item_amount = orderdoc.item_amount;
-                  orders.cart_amount = orderdoc.cart_amount;
-                  orders.product_name = orderdoc.product_name;
-                  orders.product_title = orderdoc.product_title;
-                  orders.configuration = orderdoc.configuration;
-                  orders.price = orderdoc.price;
-                  orders.featured_img = orderdoc.featured_img;  
-                  
-                  console.log(JSON.stringify(orders));
+                    orders.categoryid = orderdoc.categoryid;
+                    orders.productid = orderdoc.productid;
+                    orders.cartcount = orderdoc.cartcount;
+                    orders.item_amount = orderdoc.item_amount;
+                    orders.cart_amount = orderdoc.cart_amount;
+                    orders.product_name = orderdoc.product_name;
+                    orders.product_title = orderdoc.product_title;
+                    orders.configuration = orderdoc.configuration;
+                    orders.price = orderdoc.price;
+                    orders.featured_img = orderdoc.featured_img;  
+                    
+                    console.log(JSON.stringify(orders));
 
-                  this.ordersList.push(orders);         
+                    this.ordersList.push(orders);   
+                }      
 
               });      
               
