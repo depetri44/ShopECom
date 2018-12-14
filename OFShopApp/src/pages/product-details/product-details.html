@@ -250,5 +250,13 @@
         </ion-scroll> -->
     
     </div>
-    
+
 </ion-content>
+
+<div *ngIf="productcart.cartcount > 0" >
+    <ion-fab bottom right (click)="fabclicked()">
+        <button ion-fab> <ion-icon name="cart">{{productcart.cartcount}}</ion-icon></button>
+      </ion-fab>
+</div>
+
+

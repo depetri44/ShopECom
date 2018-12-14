@@ -6,6 +6,9 @@ import { LoginPage } from '../login/login';
 import { WishlistPage } from '../wishlist/wishlist';
 import { CartlistPage } from '../cartlist/cartlist';
 import { Constants } from '../../constatnt/constants';
+import { MyoffersPage } from '../myoffers/myoffers';
+import { OrdersuccessPage } from '../ordersuccess/ordersuccess';
+import { MyordersPage } from '../myorders/myorders';
 
 /**
  * Generated class for the DashboardPage page.
@@ -33,7 +36,8 @@ export class DashboardPage {
     this.pages = [
       { title: 'Home', page: ApphomePage, icon: 'ios-home-outline' },
       { title: 'MyCart', page: CartlistPage, icon: 'ios-cart-outline' },
-      { title: 'MyOrders', page: ApphomePage, icon: 'ios-list-outline' },
+      { title: 'MyOrders', page: MyordersPage, icon: 'ios-list-outline' },
+      { title: 'MyOffers', page: MyoffersPage, icon: 'ios-pricetags-outline' },
       { title: 'MyWishList', page: WishlistPage, icon: 'ios-heart-outline' },
       { title: 'Notification', page: ApphomePage, icon: 'ios-notifications-outline' },
       { title: 'Profile', page: UserprofilePage, icon: 'ios-contact-outline' },

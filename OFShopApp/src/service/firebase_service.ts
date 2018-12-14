@@ -8,9 +8,11 @@ import { Product } from "../model/products";
 import { AddCart } from "../model/cart";
 import { WishList } from "../model/wishlist";
 import { Constants } from "../constatnt/constants";
+import { CheckoutOrder } from "../model/checkoutList";
 
 @Injectable()
 export class FirebaseService {
+ 
   private snapshotChangesSubscription: any;
   constructor(public afs: AngularFirestore){}
 
@@ -117,6 +119,28 @@ export class FirebaseService {
       )
     })
   }
+
+  checkoutOrders(userId: any, checkoutOrder: CheckoutOrder){
+    return new Promise<any>((resolve, reject) => {
+      this.afs.collection(Constants.OrderList).doc(checkoutOrder.orderId)
+      .set({
+        orderId: checkoutOrder.orderId,
+        orderStatus: checkoutOrder.orderStatus,
+        orderdatetime: checkoutOrder.orderdatetime,
+        offercode: checkoutOrder.offercode,
+        orderLists: checkoutOrder.orderLists,
+        latitude: checkoutOrder.orderLatitude,
+        longitude: checkoutOrder.orderLongitude
+    
+      })
+      .then(
+        res => resolve(res),
+        err => reject(err)
+      )
+    })
+
+  }
+
 
   //Create Process
 

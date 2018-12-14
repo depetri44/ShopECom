@@ -50,7 +50,7 @@
                         
                       <div id="cart">
                         <div><p style='margin-right: 10px; margin-top: 10px; margin-bottom: 5px; font-size: 16px;'> Quantity   </p> </div>
-                        <div> <ion-icon ios="ios-add-circle-outline" color="secondary" name='md-add-circle' style="zoom:2.0;" (click)="addCart(cartItem)"></ion-icon> </div>
+                        <!-- <div> <ion-icon ios="ios-add-circle-outline" color="secondary" name='md-add-circle' style="zoom:2.0;" (click)="addCart(cartItem)"></ion-icon> </div> -->
                         <div><p style='margin: 10px; font-size: 16px;'> {{ cartItem.cartcount  }} </p> </div>
                         <div> <ion-icon ios="ios-remove-circle-outline" color="danger" name='md-remove-circle' style="zoom:2.0;" (click)="removeCart(cartItem)"></ion-icon> </div>
                       </div>
@@ -87,12 +87,12 @@
         
       </ion-card> -->
       </div>
-      <div class="footer">
-          <div class="row">
+      <div style="background:red; color:white;" bottom>
+          <div class="row" padding-left>
                 <div class="col">
                     <!-- <button class="button button-circle button-energized icon ion-log-in"></button> -->
                     <p class="text-center">Total Amount </p>
-                    <p>Rs. {{ totalAmount }}</p>
+                    <p><b>Rs. {{ totalAmount }}</b></p>
                 </div>
                 <div class="col">
                     <!-- <button class="button button-circle button-positive icon ion-social-facebook"></button> -->

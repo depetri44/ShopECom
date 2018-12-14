@@ -8,6 +8,7 @@ import { AddCart } from '../../model/cart';
 import { WishList } from '../../model/wishlist';
 import { Product } from '../../model/products';
 import { Constants } from '../../constatnt/constants';
+import { CheckoutProductPage } from '../checkout-product/checkout-product';
 
 /**
  * Generated class for the ProductDetailsPage page.
@@ -30,6 +31,7 @@ export class ProductDetailsPage {
   wish:any;
   url_img: any;
   catid: any;
+  cartCount: any;
   isWish: boolean;
   
   productList = Array();
@@ -50,10 +52,6 @@ export class ProductDetailsPage {
     this.isWish = false;
     console.log("PID: "+this.productId);
     console.log("UID: "+this.userId);
-
-    
-   
-
   }
 
   ionViewDidLoad(){
@@ -366,6 +364,8 @@ export class ProductDetailsPage {
       data: prd.product_id
     });
   }
-
+  fabclicked(){
+    this.navCtrl.push(CheckoutProductPage);
+  }
 
 }

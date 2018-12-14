@@ -30,8 +30,11 @@ import { SearchproductPage } from '../pages/searchproduct/searchproduct';
 import { ProductDetailsPage } from '../pages/product-details/product-details';
 import { RegisterPageModule } from '../pages/register/register.module';
 import { CheckoutProductPage } from '../pages/checkout-product/checkout-product';
+import { MyordersPage } from '../pages/myorders/myorders';
+import { MyoffersPage } from '../pages/myoffers/myoffers';
 import { Geolocation } from '@ionic-native/geolocation';
-import { FcmProvider } from '../providers/fcm/fcm';
+import { NativeGeocoder } from '@ionic-native/native-geocoder';
+import { OrdersuccessPage } from '../pages/ordersuccess/ordersuccess';
 @NgModule({
   declarations: [
     MyApp,
@@ -45,7 +48,10 @@ import { FcmProvider } from '../providers/fcm/fcm';
     CartlistPage,
     SearchproductPage,
     ProductDetailsPage,
-    CheckoutProductPage
+    CheckoutProductPage,
+    MyordersPage,
+    MyoffersPage,
+    OrdersuccessPage
   ],
   imports: [
     BrowserModule,
@@ -70,7 +76,10 @@ import { FcmProvider } from '../providers/fcm/fcm';
     CartlistPage,
     SearchproductPage,
     ProductDetailsPage,
-    CheckoutProductPage
+    CheckoutProductPage,
+    MyordersPage,
+    MyoffersPage,
+    OrdersuccessPage
   ],
   providers: [
     StatusBar,
@@ -80,7 +89,7 @@ import { FcmProvider } from '../providers/fcm/fcm';
     AuthService,
     UserListService,
     Geolocation,
-    FcmProvider
+    NativeGeocoder
   ]
 })
 export class AppModule {

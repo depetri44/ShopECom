@@ -100,14 +100,46 @@
                       <div> Delivery Mode </div>
                       <div> Cash On Delivery </div>
                     </div>
-                    
-                    <div id="checkout">
+
+                    <!-- <div id="checkout">
                         <div> Shipping Adderess </div>
                         <div style='float: right;'> Rs. 40 </div>
+                    </div> -->
+                    
+                    <div id="checkout">
+                        <div> Order ID </div>
+                        <div style='float: right;'> {{ orderid }} </div>
                     </div>
                     
               </ion-item>
           </ion-card>
+          <ion-card>
+                <ion-item>
+                  
+                    <div id="checkout">
+                      <div><p style='font-size: 20px; margin-top: 10px; '><b>Delivery Address</b></p></div>
+                      <div right end id="checkout">
+                            <div ><ion-icon ios="ios-locate-outline" md="ios-locate-outline" style="zoom:2.0;" (click)="getLocation()"></ion-icon> </div>
+                            <!-- <ion-icon ios="ios-add-circle-outline" md="ios-add-circle-outline" style="zoom:2.0;" ></ion-icon> -->
+                      </div>
+                    </div>
+                   
+                    <hr/>
+  
+                      <div id="checkout">
+                          <div> Shipping Adderess </div>
+                          <div> {{ address }} </div>
+                            <!-- <div style='float: right;'> 
+                                <div *ngIf="address != null" >Remove WishList  </div>
+                                <div *ngIf="address == null" >Add Your Address</div> 
+                            </div> -->
+                      </div>
+                      
+                      
+                </ion-item>
+            </ion-card>
+
+          <button ion-button bottom full style="height:50px;" color="secondary" (click)="checkoutOrder()">Confirm Order</button>
 
           <!-- <div class="footer">
               <div class="row">

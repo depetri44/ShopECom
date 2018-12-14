@@ -5,6 +5,10 @@ import { ToastController } from 'ionic-angular';
 import { CartDetails } from '../../constatnt/cartDetails';
 import { Platform } from 'ionic-angular';
 import { Constants } from '../../constatnt/constants';
+import { CheckoutOrder } from '../../model/checkoutList';
+import { Geolocation } from '@ionic-native/geolocation';
+import { NativeGeocoder, NativeGeocoderReverseResult, NativeGeocoderForwardResult, NativeGeocoderOptions } from '@ionic-native/native-geocoder';
+import { OrdersuccessPage } from '../ordersuccess/ordersuccess';
 
 /**
  * Generated class for the CheckoutProductPage page.
@@ -24,69 +28,132 @@ export class CheckoutProductPage {
   userId: string;
   catid: any;
   totalAmount: number;
+  orderid: any;
+  timeStamp: any;
+  irderid: any;
+  address: string;
+  
+  location: {
+    latitude: number,
+    longitude: number
+  };
 
   constructor(public navCtrl: NavController, public navParams: NavParams,
     public firebaseservices: FirebaseService, public toastController: ToastController,
-    private alertCtrl: AlertController, public geolocation: Geolocation,
-    private platform:Platform) {
+    private alertCtrl: AlertController, private platform:Platform, 
+    public geolocation: Geolocation, private nativeGeocoder: NativeGeocoder) {
+      
+      this.timeStamp = new Date().valueOf().toString();  
       this.userId = window.localStorage.getItem("USERID");
+      this.address   = "No Address Defined";
       this.totalAmount = 0;
       this.getAllCartList();
   }
 
   ionViewDidLoad() {
+    this.address   = "No Address Defined";
     console.log('ionViewDidLoad CheckoutProductPage');
   }
   getLocation(){
 
+  
+    let options = {
+      enableHighAccuracy: true,
+      timeout: 25000
+    };
 
-    //window.navigator.geolocation.getCurrentPosition();
 
+    this.geolocation.getCurrentPosition(options).then((position) => {
 
-    // this.platform.ready().then(() => {
-    //   alert('start geolocation');
-    //   let options = {
-    //     timeout: 20000,
-    //     enableHighAccuracy:true
-    //   };
+      this.location = {
+        latitude: position.coords.latitude,
+        longitude: position.coords.longitude        
+      };
 
-    //   this.geolocation.getCurrentPosition(options).then(resp => {
-    //     alert('done');
-    //     console.log(resp.coords.latitude);
-    //     console.log(resp.coords.longitude);
-    //   }).catch((error) => {
-    //     alert('error geoloc');
-    //   });
+      this.address   = "Your Current Address Defined";
+      console.log("Lat: "+position.coords.latitude);
+      console.log("Lng: "+position.coords.longitude);
+      this.reverseGeocoding(this.location.latitude, this.location.longitude);
 
-    // });
+     }).catch((error) => {
+       console.log('Error getting location', error);
+     });
 
-    // this.geolocation.getCurrentPosition().then((res) => {
-    //   // resp.coords.latitude
-    //   // resp.coords.longitude
-    //   //let location= 'lat'+ res.coords.latitude +'lang'+ res.coords.longitude;
-    //   let location='lat '+res.coords.latitude+' lang '+res.coords.longitude;
-    //   let toast = this.toastController.create({
-    //     message: location,
-    //     duration: 3000
-    //   });
-    //   toast.present();
+  }
+  reverseGeocoding(lat: any,lng: any){
+    let options: NativeGeocoderOptions = {
+      useLocale: false,
+      maxResults: 2
+    };
 
-    // }).catch((error) => {
-    // console.log('Error getting location', error);
-    // });
-    // this.geolocation.getCurrentPosition().filter((p)=>{
+    this.nativeGeocoder.reverseGeocode(lat, lng, options).then((res)=>{
+        console.log("Geo Coder: "+res);
+        
+    }, error=>{
+        console.log("Geo Error: "+error);
+        
+    })
 
-    // })
-    
-    // .then(position => {
-    //   let locationObj = {
-    //          lat: position.coords.latitude,
-    //          lon: position.coords.longitude,
-    //          timestamp: position.timestamp,
-    //          accuracy: position.coords.accuracy
-    //   };
-    //   resolve(locationObj);
-    // })
+    new Promise((resolve, reject)=>{
+        this.nativeGeocoder.reverseGeocode(lat, lng).then((result) => {
+          console.log("Result: "+result);
+        }).catch((error)=>{
+          console.log("Error: "+error);
+        })
+    })
+
+    // this.nativeGeocoder.reverseGeocode(lat,lng,options)
+    // .then((result: NativeGeocoderReverseResult) =>{
+    // this.data.addrss= result[1].subLocality +","+ result[1].locality +","+
+    // result[1].subAdministrativeArea +","+ result[1].administrativeArea +"-"+
+    // result[1].postalCode +","+result[1].countryName;
+    // console.log(this.data.addrss);
+    // alert(JSON.stringify(this.data.addrss));
+    // }).catch((error: any) => console.log(error));
+  }
+
+  checkoutOrder(){
+
+    if(this.location != null){
+      this.timeStamp = new Date().valueOf().toString(); 
+      let checktOrder= {} as CheckoutOrder;
+      //addCart.cartId = this.cart?this.cart.cartId:this.timeStamp+"CART"+this.userId;
+
+      checktOrder.orderLatitude =  this.location.latitude;
+      checktOrder.orderLongitude =  this.location.latitude;
+      checktOrder.orderId = this.orderid;
+      checktOrder.orderStatus = "Order Dispatched!";
+      checktOrder.orderdatetime = new Date().toDateString();
+      checktOrder.offercode = "FLAT10";
+      checktOrder.orderLists = this.cartList;//JSON.stringify(this.cartList);
+
+        this.firebaseservices.checkoutOrders(this.userId,checktOrder).then(res=>{
+          let length: any;
+          let i: any;
+          length = this.cartList.length;
+          i=0;
+          
+          
+          this.cartList.forEach(CartDetails => {
+                this.firebaseservices.removeProductCart(CartDetails.cartId).then(res=>{
+                    console.log(res);
+                    i++;          
+                    console.log("Length: "+length);
+                    console.log("i: "+i);
+                    if(i==length){
+                      this.navCtrl.push(OrdersuccessPage);
+                    }
+                }, error=>{
+                  console.log(error);
+                  
+                });
+            });
+            // /this.navCtrl.push()
+        }, error=>{
+
+        });
+    }else
+      this.showToast("Please select your current location!");
   }
 
   
@@ -159,7 +226,7 @@ export class CheckoutProductPage {
             // });
   
   
-            this.cartList.push( cartitems);
+            this.cartList.push(cartitems);
           }
              
         })
@@ -167,6 +234,8 @@ export class CheckoutProductPage {
       console.log("Error getting");
      
     });
+    
+    this.orderid = "ORDER"+this.timeStamp; 
   }
 
   addCart(cartitem: CartDetails){

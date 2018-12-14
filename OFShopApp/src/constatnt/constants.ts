@@ -9,5 +9,6 @@ export class Constants {
     public static readonly ProductList = "ProductList";
     public static readonly CartList = "CartList";
     public static readonly WishList = "WishList";
+    public static readonly OrderList = "OrderList";
     public static readonly USERID = "USERID";
   }

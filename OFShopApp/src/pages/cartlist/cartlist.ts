@@ -144,7 +144,9 @@ export class CartlistPage {
     let toast = this.toastController.create({
       message: ""+msg,
       duration: 5000,
-      position: 'top'
+      position: 'top',
+      showCloseButton: true,
+      closeButtonText: "Close"
     });
     toast.present();
   }
@@ -215,7 +217,10 @@ export class CartlistPage {
 
   checkoutCart(cartItem: CartDetails){
 
-    this.navCtrl.push(CheckoutProductPage);
+    if(this.cartList.length > 0)
+      this.navCtrl.push(CheckoutProductPage);
+    else
+      this.showToast("Your Cart is Empty!");
   }
 
 }

@@ -53,7 +53,9 @@ export class LoginPage {
       let toast = this.toastController.create({
         message: ""+e,
         duration: 5000,
-        position: 'bottom'
+        position: 'bottom',
+        showCloseButton: true,
+        closeButtonText: "Close"
       });
       toast.present();
     }

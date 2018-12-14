@@ -14,28 +14,29 @@ export class HomePage {
 
   rootPage:any = LoginPage;
 
-  constructor(public navCtrl: NavController, fcm: FcmProvider, toastCtrl: ToastController, platform: Platform) {
+  constructor(public navCtrl: NavController, toastCtrl: ToastController, platform: Platform) {
     this.navCtrl.push(LoginPage);
 
 
-    platform.ready().then(() => {
+    //platform.ready().then(() => {
 
       // Get a FCM token
-      fcm.getToken()
+  //     fcm.getToken()
 
-      // Listen to incoming messages
-      fcm.listenToNotifications().pipe(
-        tap(msg => {
-          // show a toast
-          const toast = toastCtrl.create({
-            message: msg+"",
-            duration: 3000
-          });
-          toast.present();
-        })
-      )
-      .subscribe()
-    });
-  }
+  //     // Listen to incoming messages
+  //     fcm.listenToNotifications().pipe(
+  //       tap(msg => {
+  //         // show a toast
+  //         const toast = toastCtrl.create({
+  //           message: msg+"",
+  //           duration: 3000
+  //         });
+  //         toast.present();
+  //       })
+  //     )
+  //     .subscribe()
+  //   });
+  // 
+    }
 
 }

@@ -241,7 +241,9 @@ export class SearchproductPage {
     let toast = this.toastController.create({
       message: ""+msg,
       duration: 5000,
-      position: 'bottom'
+      position: 'bottom',
+      showCloseButton: true,
+      closeButtonText: "Close"
     });
     toast.present();
   }
