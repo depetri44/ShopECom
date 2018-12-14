@@ -69,7 +69,7 @@ Backend was built with Google Firebase.
 
 Versioning
 
-https://github.com/saravanan72/NYTimes.git
+https://github.com/saravanan72/ShopECom.git
 
 Some Keys to Plugin
 
