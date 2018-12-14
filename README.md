@@ -2,9 +2,9 @@
 e-commerce application demo in ionic Framework.
 
 Requirements
-  Ionic 3
-  Angular 5
-  Visual Studio Code - 1.29.1
+  	Ionic 3
+  	Angular 5
+  	Visual Studio Code - 1.29.1
 
 Author
   SaravanaPandian Sivagnanam
@@ -13,36 +13,38 @@ Getting Started
 
 App Features
 
-  Sign In/ Sign Up
-  Password recovery
-  Homepage Slider
-  Filter Items by Categories/Subcategories
-  Add products to Cart
-  Place orders
-  Calculate Shipping Fee after Zone/Subzone selection
-  Account Management (Payment, Addresses, Profile, Change Password, Logout)
-  Order List/Details
-  Wish list / Favorites
-  Search Items by keywords
-  Cash On Delivery
-  PWA support
-  View Items On Sale, Featured.
+  	Sign In/ Sign Up
+  	Password recovery
+  	Homepage Slider
+  	Filter Items by Categories/Subcategories
+  	Add products to Cart
+  	Place orders
+  	Calculate Shipping Fee after Zone/Subzone selection
+  	Account Management (Payment, Addresses, Profile, Change Password, Logout)
+  	Order List/Details
+  	Wish list / Favorites
+  	Search Items by keywords
+  	Cash On Delivery
+  	PWA support
+  	View Items On Sale, Featured.
 
-  Manage Orders, View Order Details, Update Order Status
-  Manage Categories/Subcategories
-  Manage Zones/Subzones
-  Manage Users/Customers.
-  Manage Slider Images
-  Login/Logout
-  Password Recovery
+  	Manage Orders, View Order Details, Update Order Status
+  	Manage Categories/Subcategories
+  	Manage Zones/Subzones
+  	Manage Users/Customers.
+  	Manage Slider Images
+  	Login/Logout
+  	Password Recovery
 
 Key Items
 
-  Multiple Layouts
-  Tinder cards
-  Sliders
-  Cards
-  Lists
+	Firebase
+	Firestore DB
+  	Multiple Layouts
+  	Tinder cards
+  	Sliders
+  	Cards
+  	Lists
 
 Firebase backend
 Owned and maintained by Google, Firebase is a platform with different services that helps us develop applications faster. 
@@ -51,15 +53,15 @@ Firebase Cloud Messaging, Firebase Storage, Firebase Test Lab for Android, Fireb
  
 This template uses Firebase as a backend, which means you won’t have to write al
 
-Demo
+#Demo
 
 Package
 
-  1. App Source Code
+  	1. App Source Code
 
-  2. Documentation
+  	2. Documentation
 
-  3. Technical Details
+  	3. Technical Details
 
 Ionic framework is an open source front-end SDK for developing hybrid mobile apps with HTML5, CSS and JavaScript. Ionic is focused mainly on the look and feel, and UI interaction of your app. Cordova is a platform to build Native Mobile Applications using HTML5, CSS and JavaScript.
 
@@ -75,7 +77,7 @@ Some Keys to Plugin
 
 To access firebase
 
-  npm install firebase angularfire2
+  	npm install firebase angularfire2
 
 to get LatLng
 
