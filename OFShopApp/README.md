@@ -1,4 +1,5 @@
-ShoECom
+#ShopECom
+
 Demo for E-Commerce Application using Ionic Framework.
 
 Requirements
