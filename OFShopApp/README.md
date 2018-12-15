@@ -1,4 +1,4 @@
-#ShopECom
+# ShopECom
 
 Demo for E-Commerce Application using Ionic Framework.
 
@@ -7,10 +7,10 @@ Requirements
     Angular 5
     Visual Studio Code - 1.29.1
 
-Author
-  SaravanaPandian Sivagnanam
+## Author
+    SaravanaPandian Sivagnanam
 
-Getting Started
+### Getting Started
 
 App Features
 
